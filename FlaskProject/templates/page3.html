@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ders Çalışma Programı Hazırla</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .container {
+            text-align: left;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+            display: block;
+        }
+        .navbar {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border-bottom: 2px solid #4CAF50;
+        }
+        .navbar a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #333;
+        }
+        .navbar a button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .navbar a button:hover {
+            background-color: #45a049;
+        }
+        .home-icon {
+            width: 24px;
+            height: 24px;
+        }
+        form label {
+            display: block;
+            margin-top: 10px;
+        }
+        form input, form select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/page1"><button>Lise Konuları</button></a>
+        <a href="/"><img src="{{ url_for('static', filename='icons/home-icon.png') }}" alt="Home" class="home-icon"></a>
+    </div>
+    <div class="container">
+       
+        <h1>Ders Çalışma Programı Hazırla</h1>
+        <form id="study-schedule-form">
+            <label for="days">Haftada kaç gün çalışacaksınız?</label>
+            <input type="number" id="days" name="days" min="1" max="7" required>
+
+            <label for="math">Matematik:</label>
+            <input type="checkbox" id="math" name="subjects" value="Matematik">
+
+            <label for="physics">Fizik:</label>
+            <input type="checkbox" id="physics" name="subjects" value="Fizik">
+
+            <label for="chemistry">Kimya:</label>
+            <input type="checkbox" id="chemistry" name="subjects" value="Kimya">
+
+            <label for="biology">Biyoloji:</label>
+            <input type="checkbox" id="biology" name="subjects" value="Biyoloji">
+
+            <label for="history">Tarih:</label>
+            <input type="checkbox" id="history" name="subjects" value="Tarih">
+
+            <label for="geography">Coğrafya:</label>
+            <input type="checkbox" id="geography" name="subjects" value="Coğrafya">
+
+            <label for="literature">Edebiyat:</label>
+            <input type="checkbox" id="literature" name="subjects" value="Edebiyat">
+
+            <label for="time-slot">Hangi saat aralığı?</label>
+            <select id="time-slot" name="time-slot" required>
+                <option value="9:00-12:00">9:00-12:00</option>
+                <option value="12:00-17:00">12:00-17:00</option>
+                <option value="18:00-21:00">18:00-21:00</option>
+            </select>
+
+            <label for="lessons-per-day">Günde kaç ders çalışacaksınız?</label>
+            <input type="number" id="lessons-per-day" name="lessons-per-day" min="1" max="10" required>
+
+            <button type="submit">Programı Hazırla</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#study-schedule-form').submit(function(event) {
+                event.preventDefault();
+                let days = $('#days').val();
+                let subjects = [];
+                $('input[name="subjects"]:checked').each(function() {
+                    subjects.push($(this).val());
+                });
+                let timeSlot = $('#time-slot').val();
+                let lessonsPerDay = $('#lessons-per-day').val();
+
+                let prompt = `Haftada ${days} gün, ${subjects.join(', ')} derslerini çalışacak, ${timeSlot} saat aralığında çalışacak, günde ${lessonsPerDay} tane ders çalışacak bir öğrenci için ders çalışma ve dinlenme bölümleri olan bir ders çalışma programı hazırla.`;
+
+                $.ajax({
+                    url: '/get_study_schedule',
+                    type: 'POST',
+                    data: { prompt: prompt },
+                    success: function(response) {
+                        localStorage.setItem('studySchedule', response.result);
+                        window.location.href = '/page4';
+                    },
+                    error: function() {
+                        alert("Bir hata oluştu.");
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+

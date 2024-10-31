@@ -1,0 +1,162 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container { margin-top: 160px; /* Navbar yüksekliğine göre ayarlayın */ text-align: left; background-color: #ffffff; padding: 20px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); max-width: 600px; width: 90%; position: relative; display: block; }
+#subject {
+    padding: 10px;
+    width: 75%;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+
+#output {
+    margin-top: 120px;
+    padding: 10px;
+    background-color: #e7f5e1;
+    border-radius: 5px;
+}
+.output-area {
+    border: 2px solid #4CAF50; /* Yeşil kenarlık */
+    padding: 10px; /* İç boşluk */
+    margin-top: 20px; /* Üst boşluk */
+    background-color: #f9f9f9; /* Açık gri arkaplan */
+    border-radius: 8px; /* Yuvarlak köşeler */
+    font-family: Arial, sans-serif; /* Font stili */
+    font-size: 16px; /* Font boyutu */
+    color: #333; /* Yazı rengi */
+}
+
+.formatted-header { 
+    font-weight: bold; font-size: 24px;  margin-top: 20px;
+}
+.formatted-paragraph { 
+    font-size: 16px; margin-top: 10px; /* Paragraf üst boşluğu */ 
+}
+h1 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.description {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+.top-right-button { 
+    position: absolute; 
+    top: 25px; /* Üstten 10 piksel */ 
+    right: 10px; /* Sağdan 10 piksel */ 
+}
+
+/* Akordeon Stil */
+.accordion-btn {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    transition: 0.3s;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.accordion-btn:hover {
+    background-color: #45a049;
+}
+
+.panel {
+    padding: 0;
+    display: none;
+    overflow: hidden;
+    background-color: #f9f9f9;
+    border-left: 2px solid #4CAF50;
+    margin-top: 5px;
+}
+
+.sub-btn {
+    background-color: #e0f2e9;
+    color: #333;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    transition: 0.3s;
+    margin-top: 5px;
+}
+
+.sub-panel {
+    display: none;
+    padding: 5px 20px;
+    background-color: #f3f6f9;
+    font-size: 14px;
+    color: #666;
+}
+
+/* Ünite Başlıkları */
+.unit-btn {
+    background-color: #d5e8d4;
+    color: #333;
+    cursor: pointer;
+    padding: 8px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    transition: 0.3s;
+    margin-top: 4px;
+}
+
+.unit-panel {
+    display: none;
+    padding: 5px 30px;
+    background-color: #eaf6ea;
+}
+
+/* Alt Ünite Başlıkları */
+.sub-unit-btn {
+    background-color: #cde6c7;
+    color: #333;
+    cursor: pointer;
+    padding: 6px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    transition: 0.3s;
+    margin-top: 3px;
+}
+button {
+    padding: 10px 20px;
+    min-width: 112px;
+    background-color: #4CAF50;
+    color: #fff;
+    border:none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 5px;
+}
+.navbar {
+     display: flex; justify-content: flex-end; align-items: center; padding: 10px; background-color: #f1f1f1; border-bottom: 2px solid #4CAF50; position: fixed; top: 0; width: 100%; z-index: 1000; }/* Sayfa içeriğinin üstünde kalması için */
+.navbar a { margin-left: 20px; text-decoration: none; color: #333; } 
+.navbar a button { background-color: #4CAF50; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer; } 
+.navbar a button:hover { background-color: #45a049; } 
+.home-icon { width: 24px; height: 24px; margin: 10px; }
