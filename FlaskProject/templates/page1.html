@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akıllı Öğrenme Asistanı</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="navbar"> 
+        <a href="/"><img src="{{ url_for('static', filename='icons/home-icon.png') }}" alt="Home" class="home-icon"></a> 
+    </div>
+    <div class="container">
+        
+        <h1>Lise Müfredatı</h1>
+
+        <!-- Akordeon Başlıkları -->
+        <div class="accordion">
+            <button class="accordion-btn">9. Sınıf Konuları</button>
+            <div class="panel">
+                <button class="sub-btn">Türk Dili ve Edebiyatı</button>
+                <div class="sub-panel">
+                    <button class="unit-btn">1. ÜNİTE: GİRİŞ</button>
+                    <button class="unit-btn">2. ÜNİTE: HİKAYE (ÖYKÜ)</button>
+                    <button class="unit-btn">3. ÜNİTE: ŞİİR</button>
+                    <button class="unit-btn">4.ÜNİTE: MASAL / FABL</button>
+                    <button class="unit-btn">5.ÜNİTE: ROMAN</button>
+                    <button class="unit-btn">6.ÜNİTE: TİYATRO</button>
+                    <button class="unit-btn">7.ÜNİTE: BİYOGRAFİ/OTOBİYOGRAFİ</button>
+                    <button class="unit-btn">8.ÜNİTE: MEKTUP/E-POSTA</button>
+                    <button class="unit-btn">9.ÜNİTE: GÜNLÜK/BLOG</button>
+                </div>
+                <button class="sub-btn">Matematik</button>
+                <div class="sub-panel">
+                    <button class="unit-btn">1. ÜNİTE: Sayılar</button>
+                    <button class="unit-btn">2. ÜNİTE: Nicelikler ve Değişimler</button>
+                    <button class="unit-btn">3. ÜNİTE: Algoritma ve Bilişim</button>
+                    <button class="unit-btn">4. ÜNİTE: Geometrik Şekiller</button>
+                    <button class="unit-btn">5. ÜNİTE: Eşlik ve Benzerlik</button>
+                    <button class="unit-btn">6. ÜNİTE: İstatistiksel Araştırma Süreci</button>
+                    <button class="unit-btn">7. ÜNİTE: Veriden Olasılığa</button>
+                </div>
+                <button class="sub-btn">Fizik</button>
+                <div class="sub-panel">
+                    <button class="unit-btn">1. Ünite: FİZİK BİLİMİ ve KARİYER KEŞFİ</button>
+                    <button class="unit-btn">2. Ünite: KUVVET ve HAREKET</button>
+                    <button class="unit-btn">3. Ünite: AKIŞKANLAR</button>
+                    <button class="unit-btn">4. Ünite: ENERJİ</button>
+                </div>
+                <button class="sub-btn">Kimya</button> 
+                <div class="sub-panel"> 
+                    <button class="unit-btn">1. Ünite: ETKİLEŞİM</button> 
+                    <div class="unit-panel"> 
+                        <button class="sub-unit-btn">1.1. Kimya Hayattır</button> 
+                        <button class="sub-unit-btn">1.2. Atomdan Periyodik Tabloya</button> 
+                    </div> 
+                    <button class="unit-btn">2. Ünite: ÇEŞİTLİLİK</button> 
+                    <div class="unit-panel"> 
+                        <button class="sub-unit-btn">2.1. Etkileşimler</button> 
+                        <button class="sub-unit-btn">2.2. Etkileşimden Maddeye</button> 
+                    </div> 
+                    <button class="unit-btn">3. Ünite: SÜRDÜRÜLEBİLİRLİK</button> 
+                </div>
+                <button class="sub-btn">Biyoloji</button>
+                <div class="sub-panel">
+                    <button class="unit-btn">1.Ünite: YAŞAM</button>
+                    <div class="unit-panel">
+                        <button class="sub-unit-btn">1.1. Yaşam Bilimi: Biyoloji</button>
+                          <ul>
+                            <li>Biyolojinin Önemi</li>
+                            <li>Biyoloji Biliminin Gelişimindeki Dönüm Noktaları</li>
+                            <li>Bilimin Doğası, Bilimsel Araştırma Süreçleri, Bilim Etiği</li>
+                            <li>Canlıların Ortak Özellikleri</li>
+                            <button class="sub-unit-btn">1.2. Sınıflandırma ve Biyoçeşitlilik</button>
+                            <li>Sınıflandırmada Temel Yaklaşımlar ve Modern Sınıflandırma</li>
+                            <li>Üç Üst Âlem (Domain) Sisteminde Yer Alan Canlılar ve Genel Özellikleri (Bakteriler, Arkeler, Ökaryotlar)</li>
+                            <li>Biyoçeşitlilik</li>
+                          </ul>
+                    </div>
+                    
+                    <button class="unit-btn">2.Ünite: ORGANİZASYON</button>
+                    <div class="unit-panel">
+                        <button class="sub-unit-btn">2.1. İnorganik Moleküller</button>
+                        <ul>
+                            <li>Su</li>
+                            <li>Mineraller</li>
+                        </ul>
+                        <button class="sub-unit-btn">2.2. Organik Moleküller</button>
+                          <ul>
+                            <li>Karbonhidratlar</li>
+                            <li>Yağlar</li>
+                            <li>Proteinler</li>
+                            <li>Nükleik Asitler</li>
+                            <li>Vitaminler</li>
+                          </ul>  
+                        <button class="sub-unit-btn">2.3. Hücrenin Organizasyonu</button>
+                        <ul>
+                            <li>Prokaryot ve Ökaryot Hücre</li>
+                            <li>Hücre Zarı</li>
+                            <li>Sitoplazma</li>
+                            <li>Sitoplazmik Yapılar</li>
+                            <li>Organeller ve Çekirdek</li>
+                            <li>Hücre Zarından Madde Geçişleri</li>
+                            <li>Hücreden Doku</li>
+                            <li>Organ ve Sistemlerin Organizasyonu</li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="sub-btn">Tarih</button> 
+                <div class="sub-panel"> 
+                    <button class="unit-btn">1.Ünite: GEÇMİŞİN İNŞA SÜRECİNDE TARİH</button> 
+                    <div class="unit-panel"> 
+                        <button class="sub-unit-btn">Tarih Öğrenmenin Faydaları</button> 
+                        <button class="sub-unit-btn">Tarihsel Bilginin Üretim Süreci</button> 
+                        <button class="sub-unit-btn">Tarih Araştırma ve Yazımında Dijitalleşme</button>
+                    </div> 
+                    <button class="unit-btn">2. Ünite: ESKİ ÇAĞ MEDENİYETLERİ</button> 
+                    <div class="unit-panel"> 
+                        <button class="sub-unit-btn">Tarım Devrimi’nin Eski Çağ Medeniyetlerindeki Yerleşmeye ve Ekonomiye Etkisi</button> 
+                        <button class="sub-unit-btn">Eski Çağ Medeniyetlerinde Yönetim ve Ordu</button> 
+                    </div> 
+                </div>                
+                <button class="sub-btn">Coğrafya</button>
+                <div class="sub-panel">
+                    <button class="unit-btn">1.Ünite: COĞRAFYANIN DOĞASI</button>
+                    <ul>
+                        <li>Coğrafya Biliminin Konusu ve Bölümleri</li>
+                        <li>Niçin Coğrafya Öğrenmeliyiz?</li>
+                        <li>Coğrafya Biliminin Gelişimi</li>
+                    </ul>
+                    <button class="unit-btn">2.Ünite: MEKANSAL BİLGİ TEKNOLOJİLERİ</button>
+                    <ul>
+                        <li>Mekânın Aynası Haritalar</li>
+                        <li>Türkiye’nin Coğrafi Konumu</li>
+                        <li>Mekânsal Bilgi Teknolojilerinin Bileşenleri</li>
+                    </ul>
+                    <button class="unit-btn">3.Ünite: DOĞAL SİSTEMLER VE SÜREÇLER</button>
+                    <ul>
+                        <li>Hava Olayları ve Günlük Hayata Etkileri</li>
+                        <li>İklim Sisteminin Bileşen ve Değişkenleri</li>
+                        <li>İklim Türleri</li>
+                        <li>İklim Sisteminde Yaşanan Değişiklikler</li>
+                    </ul>
+                    <button class="unit-btn">4.Ünite: BEŞERİ SİSTEMLER VE SÜREÇLER</button>
+                    <ul>
+                        <li>Nüfusun Tarihsel Değişimi ve Geleceği</li>
+                        <li>Nüfusun Dağılışı ve Hareketleri</li>
+                        <li>Demografik Dönüşüm ve Nüfus Piramitleri</li>
+                        <li>Nüfusla İlgili Fırsat, Sorun ve Politikalar</li>
+                    </ul>
+                    <button class="unit-btn">5.Ünite: EKONOMİK FAALİYETLER VE ETKİLERİ</button>
+                    <ul>
+                        <li>Ekonomik Faaliyetleri Etkileyen Coğrafi Faktörler</li>
+                    </ul>
+                    <button class="unit-btn">6.Ünite: AFETLER VE SÜRDÜRÜLEBİLİR ÇEVRE</button>
+                    <ul>
+                        <li>Tehlike, Risk ve Afet</li>
+                        <li>Afet Türleri</li>
+                        <li>Bütüncül Afet Yönetimi</li>
+                    </ul>
+                    <button class="unit-btn">7.Ünite: BÖLGELER, ÜLKELER VE KÜRESEL BAĞLANTILAR</button>
+                    <ul>
+                        <li>Bölge ve Bölge Sınırı</li>
+                    </ul>
+                </div>
+                <button class="sub-btn">İngilizce</button>
+                <div class="sub-panel">
+                    <button class="unit-btn">THEME 1: STUDYING ABROAD / ÜNİTE 1: YURTDIŞINDA EĞİTİM</button>
+                    <button class="unit-btn">THEME 2: MY ENVIRONMENT / ÜNİTE 2: BENİM ÇEVREM</button>
+                </div>
+                <button class="sub-btn">Din Kültürü</button>
+                <div class="sub-panel">
+                    <button class="unit-btn">1. ÜNİTE: GİRİŞ</button>
+                    <button class="unit-btn">2. ÜNİTE: Şiir</button>
+                </div>
+                <!-- Diğer ders başlıkları burada yer alacak -->
+            </div>
+
+            <button class="accordion-btn">10. Sınıf Konuları</button>
+            <div class="panel">
+                <button class="sub-btn">Türk Dili ve Edebiyatı</button>
+                <div class="sub-panel">
+                    <button class="unit-btn">1. ÜNİTE: GİRİŞ</button>
+                    <button class="unit-btn">2. ÜNİTE: Şiir</button>
+                </div>
+                <button class="sub-btn">Matematik</button>
+                <div class="sub-panel">
+                    <button class="unit-btn">1. ÜNİTE: GİRİŞ</button>
+                    <button class="unit-btn">2. ÜNİTE: Şiir</button>
+                </div>
+                <button class="sub-btn">Fizik</button>
+                <div class="sub-panel">
+                    <button class="unit-btn">1. ÜNİTE: GİRİŞ</button>
+                    <button class="unit-btn">2. ÜNİTE: Şiir</button>
+                </div>
+                <button class="sub-btn">Biyoloji</button>
+                <div class="sub-panel">
+                    <button class="unit-btn">1. ÜNİTE: GİRİŞ</button>
+                    <button class="unit-btn">2. ÜNİTE: Şiir</button>
+                </div>
+                <button class="sub-btn">Kimya</button>
+                <div class="sub-panel">
+                    <button class="unit-btn">1. ÜNİTE: GİRİŞ</button>
+                    <button class="unit-btn">2. ÜNİTE: Şiir</button>
+                </div>
+                <button class="sub-btn">Tarih</button>
+                <div class="sub-panel">
+                    <button class="unit-btn">1. ÜNİTE: GİRİŞ</button>
+                    <button class="unit-btn">2. ÜNİTE: Şiir</button>
+                </div>
+                <button class="sub-btn">Coğrafya</button>
+                <div class="sub-panel">
+                    <button class="unit-btn">1. ÜNİTE: GİRİŞ</button>
+                    <button class="unit-btn">2. ÜNİTE: Şiir</button>
+                </div>
+                <button class="sub-btn">İngilizce</button>
+                <div class="sub-panel">
+                    <button class="unit-btn">1. ÜNİTE: GİRİŞ</button>
+                    <button class="unit-btn">2. ÜNİTE: Şiir</button>
+                </div>
+                <button class="sub-btn">Din Kültürü ve Ahlak Bilgisi</button>
+                <div class="sub-panel">
+                    <button class="unit-btn">1. ÜNİTE: GİRİŞ</button>
+                    <button class="unit-btn">2. ÜNİTE: Şiir</button>
+                </div>
+                <button class="sub-btn">Felsefe</button>
+                <div class="sub-panel">
+                    <button class="unit-btn">1. ÜNİTE: GİRİŞ</button>
+                    <button class="unit-btn">2. ÜNİTE: Şiir</button>
+                </div>
+                <!-- Diğer ders başlıkları burada yer alacak -->
+            </div>
+            <button class="accordion-btn">11. Sınıf Konuları</button>
+            <div class="panel">
+                <button class="sub-btn">Türk Dili ve Edebiyatı</button>
+                <div class="sub-panel">
+                    <button class="unit-btn">1. ÜNİTE: GİRİŞ</button>
+                    <button class="unit-btn">2. ÜNİTE: HİKAYE (ÖYKÜ)</button>
+                    <button class="unit-btn">3. ÜNİTE: ŞİİR</button>
+                </div>
+                <button class="sub-btn">Matematik</button>
+                <div class="sub-panel">
+                    <button class="unit-btn">1. ÜNİTE: Temel Kavramlar</button>
+                    <button class="unit-btn">2. ÜNİTE: Sayılar</button>
+                </div>
+                <button class="sub-btn">Fizik</button>
+                <div class="sub-panel">
+                    <button class="unit-btn">1. ÜNİTE: GİRİŞ</button>
+                    <button class="unit-btn">2. ÜNİTE: Şiir</button>
+                </div>
+                <button class="sub-btn">Kimya</button>
+                <div class="sub-panel">
+                    <button class="unit-btn">1. ÜNİTE: GİRİŞ</button>
+                    <button class="unit-btn">2. ÜNİTE: Şiir</button>
+                </div>
+                <button class="sub-btn">Biyoloji</button>
+                <div class="sub-panel">
+                    <button class="unit-btn">1. ÜNİTE: GİRİŞ</button>
+                    <button class="unit-btn">2. ÜNİTE: Şiir</button>
+                </div>
+                <button class="sub-btn">Tarih</button>
+                <div class="sub-panel">
+                    <button class="unit-btn">1. ÜNİTE: GİRİŞ</button>
+                    <button class="unit-btn">2. ÜNİTE: Şiir</button>
+                </div>
+                <button class="sub-btn">Coğrafya</button>
+                <div class="sub-panel">
+                    <button class="unit-btn">1. ÜNİTE: GİRİŞ</button>
+                    <button class="unit-btn">2. ÜNİTE: Şiir</button>
+                </div>
+                <button class="sub-btn">İngilizce</button>
+                <div class="sub-panel">
+                    <button class="unit-btn">1. ÜNİTE: GİRİŞ</button>
+                    <button class="unit-btn">2. ÜNİTE: Şiir</button>
+                </div>
+                <button class="sub-btn">Din Kültürü</button>
+                <div class="sub-panel">
+                    <button class="unit-btn">1. ÜNİTE: GİRİŞ</button>
+                    <button class="unit-btn">2. ÜNİTE: Şiir</button>
+                </div>
+                <button class="sub-btn">Felsefe</button>
+                <div class="sub-panel">
+                    <button class="unit-btn">1. ÜNİTE: GİRİŞ</button>
+                    <button class="unit-btn">2. ÜNİTE: Şiir</button>
+                </div>
+                <button class="sub-btn">Psikoloji</button>
+                <div class="sub-panel">
+                    <button class="unit-btn">1. ÜNİTE: GİRİŞ</button>
+                    <button class="unit-btn">2. ÜNİTE: Şiir</button>
+                </div>
+                <button class="sub-btn">Sosyoloji</button>
+                <div class="sub-panel">
+                    <button class="unit-btn">1. ÜNİTE: GİRİŞ</button>
+                    <button class="unit-btn">2. ÜNİTE: Şiir</button>
+                </div>
+                <!-- Diğer ders başlıkları burada yer alacak -->
+            </div>
+            <button class="accordion-btn">12. Sınıf Konuları</button>
+            <div class="panel">
+                <button class="sub-btn">Türk Dili ve Edebiyatı</button>
+                <div class="sub-panel">
+                    <button class="unit-btn">1. ÜNİTE: GİRİŞ</button>
+                    <button class="unit-btn">2. ÜNİTE: HİKAYE (ÖYKÜ)</button>
+                    <button class="unit-btn">3. ÜNİTE: ŞİİR</button>
+                </div>
+                <button class="sub-btn">Matematik</button>
+                <div class="sub-panel">
+                    <button class="unit-btn">1. ÜNİTE: Temel Kavramlar</button>
+                    <button class="unit-btn">2. ÜNİTE: Sayılar</button>
+                </div>
+                <button class="sub-btn">Fizik</button>
+                <div class="sub-panel">
+                    <button class="unit-btn">1. ÜNİTE: GİRİŞ</button>
+                    <button class="unit-btn">2. ÜNİTE: Şiir</button>
+                </div>
+                <button class="sub-btn">Kimya</button>
+                <div class="sub-panel">
+                    <button class="unit-btn">1. ÜNİTE: GİRİŞ</button>
+                    <button class="unit-btn">2. ÜNİTE: Şiir</button>
+                </div>
+                <button class="sub-btn">Biyoloji</button>
+                <div class="sub-panel">
+                    <button class="unit-btn">1. ÜNİTE: GİRİŞ</button>
+                    <button class="unit-btn">2. ÜNİTE: Şiir</button>
+                </div>
+                <button class="sub-btn">Tarih</button>
+                <div class="sub-panel">
+                    <button class="unit-btn">1. ÜNİTE: GİRİŞ</button>
+                    <button class="unit-btn">2. ÜNİTE: Şiir</button>
+                </div>
+                <button class="sub-btn">Coğrafya</button>
+                <div class="sub-panel">
+                    <button class="unit-btn">1. ÜNİTE: GİRİŞ</button>
+                    <button class="unit-btn">2. ÜNİTE: Şiir</button>
+                </div>
+                <button class="sub-btn">İngilizce</button>
+                <div class="sub-panel">
+                    <button class="unit-btn">1. ÜNİTE: GİRİŞ</button>
+                    <button class="unit-btn">2. ÜNİTE: Şiir</button>
+                </div>
+                <button class="sub-btn">Din Kültürü</button>
+                <div class="sub-panel">
+                    <button class="unit-btn">1. ÜNİTE: GİRİŞ</button>
+                    <button class="unit-btn">2. ÜNİTE: Şiir</button>
+                </div>
+                <button class="sub-btn">İnkılap Tarihi ve Atatürkçülük</button>
+                <div class="sub-panel">
+                    <button class="unit-btn">1. ÜNİTE: GİRİŞ</button>
+                    <button class="unit-btn">2. ÜNİTE: Şiir</button>
+                </div>
+                <button class="sub-btn">Çağdaş Türk ve Dünya Tarihi</button>
+                <div class="sub-panel">
+                    <button class="unit-btn">1. ÜNİTE: GİRİŞ</button>
+                    <button class="unit-btn">2. ÜNİTE: Şiir</button>
+                </div>
+                <button class="sub-btn">Mantık</button>
+                <div class="sub-panel">
+                    <button class="unit-btn">1. ÜNİTE: GİRİŞ</button>
+                    <button class="unit-btn">2. ÜNİTE: Şiir</button>
+                </div>
+                <button class="sub-btn">Demokrasi ve İnsan Hakları Konuları</button>
+                <div class="sub-panel">
+                    <button class="unit-btn">1. ÜNİTE: GİRİŞ</button>
+                    <button class="unit-btn">2. ÜNİTE: Şiir</button>
+                </div>
+                
+                <!-- Diğer ders başlıkları burada yer alacak -->
+            </div>
+
+            <!-- Diğer sınıflar için benzer yapı burada devam eder -->
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".accordion-btn").click(function() {
+                $(this).next(".panel").toggle();
+            });
+
+            $(".sub-btn").click(function() {
+                $(this).next(".sub-panel").toggle();
+            });
+            
+            $(".unit-btn").click(function() {
+                $(this).next(".unit-panel").toggle();
+            });
+        });
+    </script>
+    <script> $(document).ready(function() { $('.sub-unit-btn').click(function() { let topic = $(this).text(); $.ajax({ url: '/get_info', type: 'POST', data: { subject: topic }, success: function(response) { localStorage.setItem('output', response.result); window.location.href = '/page2'; }, error: function() { alert("Bir hata oluştu."); } }); }); }); </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akıllı Öğrenme Asistanı</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    
+    <div class="navbar"> 
+        <a href="/page1"><button>Lise Konuları</button></a> 
+        <a href="/page3"><button>Ders Çalışma Programı Hazırla</button></a>
+        <a href="/"><img src="{{ url_for('static', filename='icons/home-icon.png') }}" alt="Home" class="home-icon"></a> 
+    </div>
+    
+    <div class="container"> 
+        
+        <h1>Akıllı Öğrenme Asistanı</h1>
+        <input type="text" id="subject" placeholder="Bir konu girin, örneğin 'trigonometri'">
+        <button id="getInfo">Bilgi Al</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script> $(document).ready(function() { $('#getInfo').click(function() { let subject = $('#subject').val(); $.ajax({ url: '/get_info', type: 'POST', data: { subject: subject }, success: function(response) { let outputArray = response.result.split('\n'); let formattedOutput = ''; outputArray.forEach(line => { if (line.startsWith('**')) { formattedOutput += `<div class="formatted-header">${line.replace(/\*\*/g, '')}</div>`; } else { formattedOutput += `<p class="formatted-paragraph">${line}</p>`; } }); localStorage.setItem('output', formattedOutput); window.location.href = '/page2'; }, error: function() { $('#output').html("Bir hata oluştu."); } }); }); }); </script>     
+</body>
+</html>
